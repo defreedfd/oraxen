@@ -32,6 +32,9 @@ jobs:
       - name: Compile plugin
         run: ./gradlew compileJava :nms:java21:compileJava :nms:java25:compileJava --parallel --build-cache
 
+      - name: Build Jar File
+        run: ./gradlew assemble -x test
+
       - name: Upload Oraxen Plugin Jar
         uses: actions/upload-artifact@v4
         with:
